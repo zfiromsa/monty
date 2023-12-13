@@ -3,38 +3,38 @@
 int main(int arc, char **argv)
 {
 FILE *fptr;
-int len, line_count;
+size_t len;
+int line_count;
+ssize_t read;
 char *content;
-stack_t *stack, *head;
+stack_t *stack;
 
 content = NULL;
 stack = NULL;
-head = NULL;
 line_count = 0;
 len = 0;
 if (arc != 2)
 {
-printf(stderr, "USAGE: monty file\n");
+fprintf(stderr, "USAGE: monty file\n");
 exit(EXIT_FAILURE);
 }
-
-fptr = fopen(argv[1], 'r');
+fptr = fopen(argv[1], "r");
 if (fptr == NULL)
 {
-printf(stderr, "Error: Can't open file %s", argv[1]);
+fprintf(stderr, "Error: Can't open file %s", argv[1]);
 exit(EXIT_FAILURE);
 }
-while(getline(&content, &len, fptr) != -1)
+while((read = getline(&content, &len, fptr)) != -1)
 {
 char *opcode, *arg;
 
 line_count++;
 opcode = strtok(content, " \n");
-if (line_count == 1)
-    head = run_op_code(opcode, arg, stack);
+arg = strtok(NULL, " \n");
 stack = run_op_code(opcode, arg, stack);
 }
 fclose(fptr);
 free(content);
+return (0);
 }
 
