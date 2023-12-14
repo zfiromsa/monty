@@ -15,10 +15,10 @@ int main(int arc, char **argv)
 	all_key.file = fopen(argv[1], "r");
 	all_key.line_number = 0;
 	if (all_key.file == NULL)
-    {
-        fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
-    }
+	}
 	while((read = getline(&all_key.content, &len, all_key.file)) != -1)
 	{
 		char *opcode;
