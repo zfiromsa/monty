@@ -17,7 +17,7 @@ else
 {
 if ((value = atoi(all_key.arg)) == 0)
 {
-fprintf(stderr, "%d: usage: push integer", all_key.line_number);
+fprintf(stderr, "%d: usage: push integer", line_number);
 free_stack(stack);
 free(all_key.content);
 fclose(all_key.file);
