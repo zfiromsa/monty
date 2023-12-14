@@ -25,8 +25,10 @@ exit(EXIT_FAILURE);
 N_node->prev = NULL;
 N_node->n = value;
 if (*stack != NULL)
+{
     N_node->next = *stack;
     (*stack)->prev = N_node;
+}
 *stack = N_node;
 }
 
