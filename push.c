@@ -17,7 +17,7 @@ if (*all_key.arg == '0')
 else if ((value = atoi(all_key.arg)) == 0)
 {
 fprintf(stderr, "L%d: usage: push integer\n", line_number);
-free_stack(&stack);
+free_stack(stack);
 free(all_key.content);
 fclose(all_key.file);
 exit(EXIT_FAILURE);
