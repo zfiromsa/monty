@@ -6,6 +6,7 @@ int i;
 instruction_t instruction[] = {
     {"push", F_push},
     {"pall", F_pall},
+    {"pint", F_pint},
     {NULL, NULL}
 };
 

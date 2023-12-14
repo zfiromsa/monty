@@ -56,6 +56,7 @@ int run_op_code(char *opcode, stack_t **stack);
 void free_stack(stack_t **stack);
 void F_pall(stack_t **stack, unsigned int line_number);
 void F_push(stack_t **stack, unsigned int line_number);
+void F_pint(stack_t **stack, unsigned int line_number);
 int is_number(void);
 
 #endif
