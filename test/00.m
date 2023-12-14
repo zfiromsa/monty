@@ -1,5 +1,5 @@
-push 99
-push 88
-push 77
-push 66
+push 1
+push 2
+push 3
+push 4
 pall
