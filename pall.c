@@ -1,15 +1,15 @@
 #include "main.h"
 
-stack_t *pall(stack_t *stack)
+void F_pall(stack_t **stack, unsigned int line_number)
 {
 stack_t *tmp;
 
-tmp = stack;
-while (tmp != NULL)
+tmp = *stack;
+(void)line_number;
+while (tmp)
 {
-    printf("%d\n", tmp->n);
-    tmp = tmp->next;
+printf("%d", tmp->n);
+tmp = tmp->next;
 }
-return (stack);
 }
 

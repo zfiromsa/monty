@@ -1,23 +1,33 @@
 #include "main.h"
 
-stack_t *push(stack_t *stack, int value)
+void F_push(stack_t **stack, unsigned int line_number)
 {
-stack_t *N_stack;
+stack_t *N_node;
+int value;
 
-
-N_stack = malloc(sizeof(stack_t));
-if (N_stack == NULL)
+N_node = malloc(sizeof(stack_t));
+if (N_node == NULL)
 {
     fprintf(stderr, "Error: malloc failed");
     exit(EXIT_FAILURE);
 }
-N_stack->next = stack;
-N_stack->prev = NULL;
-N_stack->n = value;
-if (!stack)
+if (*all_key.content == '0')
+    value = 0;
+else
 {
-stack->prev = N_stack;
+if ((value = atoi(all_key.content)) == 0)
+{
+fprintf(stderr, "%d: usage: push integer", line_number);
+free_stack(stack);
+free(all_key.content);
+fclose(all_key.file);
 }
-return (N_stack);
+}
+N_node->next = *stack;
+N_node->prev = NULL;
+N_node->n = value;
+if (*stack != NULL)
+    (*stack)->prev = N_node;
+*stack = N_node;
 }
 

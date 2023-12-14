@@ -1,40 +1,34 @@
 #include "main.h"
 
+key_t all_key;
+
 int main(int arc, char **argv)
 {
-FILE *fptr;
-size_t len;
-int line_count;
-ssize_t read;
-char *content;
-stack_t *stack;
+	size_t len;
+	ssize_t read;
+	stack_t *stack;
 
-content = NULL;
-stack = NULL;
-line_count = 0;
-len = 0;
-if (arc != 2)
-{
-fprintf(stderr, "USAGE: monty file\n");
-exit(EXIT_FAILURE);
-}
-fptr = fopen(argv[1], "r");
-if (fptr == NULL)
-{
-fprintf(stderr, "Error: Can't open file %s", argv[1]);
-exit(EXIT_FAILURE);
-}
-while((read = getline(&content, &len, fptr)) != -1)
-{
-char *opcode, *arg;
+	stack = NULL;
+	len = 0;
+	if (arc != 2)
+		_exit_fail(1);
+	all_key.file = fopen(argv[1], "r");
+	all_key.line_number = 0;
+	if (all_key.file == NULL)
+		_exit_fail(1);
+	while((read = getline(&all_key.content, &len, all_key.file)) != -1)
+	{
+		char *opcode;
 
-line_count++;
-opcode = strtok(content, " \n");
-arg = strtok(NULL, " \n");
-stack = run_op_code(opcode, arg, stack);
-}
-fclose(fptr);
-free(content);
-return (0);
+		all_key.line_number++;
+		opcode = strtok(all_key.content, " \t\r\n\a");
+		all_key.arg = strtok(NULL, " \n\t");
+		if (!opcode || *opcode == '#')
+			continue;
+		run_op_code(opcode, &stack);
+	}
+	fclose(all_key.file);
+	free(all_key.content);
+	return (0);
 }
 

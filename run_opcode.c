@@ -1,22 +1,28 @@
 #include "main.h"
 
-stack_t *run_op_code(char *opcode, char *argument, stack_t *stack)
+int run_op_code(char *opcode, stack_t **stack)
 {
-if (strcmp(opcode, "push") == 0)
-{
-    int value;
+int i;
+instruction_t instruction[] = {
+    {"push", F_push},
+    {"pall", F_pall},
+    {NULL, NULL}
+};
 
-    value = atoi(argument);
-    return (push(stack, value));
-}
-else if (strcmp(opcode, "pall") == 0)
+i = 0;
+while(instruction[i].opcode != NULL)
 {
-    return(pall(stack));
-}
-else
+if (!strcmp(opcode, instruction[i].opcode))
 {
-    fprintf(stderr, "<line_number>: unknown instruction %s", opcode);
-    exit(EXIT_FAILURE);
+    instruction[i].f(stack, all_key.line_number);
+    return (0);
 }
+i++;
+}
+fprintf(stderr, "<line_number>: unknown instruction %s", opcode);
+free_stack(stack);
+free(all_key.content);
+fclose(all_key.file);
+exit(EXIT_FAILURE);
 }
 

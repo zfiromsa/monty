@@ -37,10 +37,25 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern int line_count;
-stack_t *run_op_code(char *opcode, char *argument, stack_t *stack);
-stack_t *push(stack_t *stack, int value);
-stack_t *pall(stack_t *stack);
+/**
+ * 
+ * 
+*/
+typedef struct key_s
+{
+	char *arg;
+        unsigned int line_number;
+	FILE *file;
+	char *content;
+} key_t;
+extern key_t all_key;
+
+void _exit_fail(int value);
+int run_op_code(char *opcode, stack_t **stack);
+void free_stack(stack_t **stack);
+void F_pall(stack_t **stack, unsigned int line_number);
+void F_push(stack_t **stack, unsigned int line_number);
+int is_number(void);
 
 #endif
 
