@@ -6,9 +6,5 @@ stack_t *tmp;
 
 tmp = *stack;
 (void)line_number;
-while (tmp->next)
-{
-tmp = tmp->next;
-}
 printf("%d\n", tmp->n);
 }
