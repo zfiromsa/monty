@@ -8,7 +8,7 @@ tmp = *stack;
 (void)line_number;
 while (tmp)
 {
-printf("%d", tmp->n);
+printf("%d\n", tmp->n);
 tmp = tmp->next;
 }
 }
