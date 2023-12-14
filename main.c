@@ -1,9 +1,8 @@
 #include "monty.h"
 
-key_t all_key;
-
 int main(int arc, char **argv)
 {
+	key_t all_key;
 	size_t len;
 	ssize_t read;
 	stack_t *stack;
@@ -19,7 +18,7 @@ int main(int arc, char **argv)
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while((read = getline(&all_key.content, &len, all_key.file)) != -1)
+	while ((read = getline(&all_key.content, &len, all_key.file)) != -1)
 	{
 		char *opcode;
 

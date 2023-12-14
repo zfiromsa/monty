@@ -11,7 +11,7 @@ int run_op_code(char *opcode, stack_t **stack)
 	};
 
 	i = 0;
-	while(instruction[i].opcode != NULL)
+	while (instruction[i].opcode != NULL)
 	{
 		if (!strcmp(opcode, instruction[i].opcode))
 		{

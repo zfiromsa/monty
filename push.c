@@ -12,8 +12,9 @@ void F_push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	if (*all_key.arg == '0')
- 		value = 0;
-	else if ((value = atoi(all_key.arg)) == 0)
+		value = 0;
+	value = atoi(all_key.arg);
+	else if (value == 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free_stack(stack);
