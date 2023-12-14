@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 int run_op_code(char *opcode, stack_t **stack)
 {

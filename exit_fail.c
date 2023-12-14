@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 void _exit_fail(int value)
 {
