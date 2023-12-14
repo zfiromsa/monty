@@ -1,8 +1,9 @@
 #include "monty.h"
 
+key_t all_key;
+
 int main(int arc, char **argv)
 {
-	key_t all_key;
 	size_t len;
 	ssize_t read;
 	stack_t *stack;
