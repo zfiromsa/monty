@@ -13,20 +13,19 @@ if (N_node == NULL)
 }
 if (*all_key.arg == '0')
     value = 0;
-else
+
+else if ((value = atoi(all_key.arg)) == 0)
 {
-if ((value = atoi(all_key.arg)) == 0)
-{
-fprintf(stderr, "%d: usage: push integer", line_number);
+fprintf(stderr, "L%d: usage: push integer\n", line_number);
 free_stack(stack);
 free(all_key.content);
 fclose(all_key.file);
+exit(EXIT_FAILURE);
 }
-}
-N_node->next = *stack;
 N_node->prev = NULL;
 N_node->n = value;
 if (*stack != NULL)
+    N_node->next = *stack;
     (*stack)->prev = N_node;
 *stack = N_node;
 }
