@@ -8,10 +8,7 @@ void F_push(stack_t **stack, unsigned int line_number)
 
 	if (all_key.arg || !is_number())
 	{
-        fprintf(stderr, "L%d: usage: push integer\n", line_number);
-        free_stack(stack);
-        free(all_key.content);
-        fclose(all_key.file);
+		free_stack(stack);
         _exit_fail(1);
 	}
 	value = atoi(all_key.arg);
