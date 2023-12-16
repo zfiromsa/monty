@@ -49,6 +49,7 @@ typedef struct key_s
 	FILE *file;
 	char *content;
 } key_t;
+
 extern key_t all_key;
 
 void _exit_fail(int value);

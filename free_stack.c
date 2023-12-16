@@ -2,14 +2,13 @@
 
 void free_stack(stack_t **stack)
 {
-	stack_t **tmp;
+	stack_t *tmp;
 
-	while (!(*stack)->next)
+	while (*stack != NULL)
 	{
-		tmp = &(*stack)->next;
-		free(stack);
-		stack = tmp;
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
 	}
-	free(stack);
 }
 

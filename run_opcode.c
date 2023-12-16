@@ -20,10 +20,10 @@ int run_op_code(char *opcode, stack_t **stack)
 	}
 	i++;
 	}
-	fprintf(stderr, "<line_number>: unknown instruction %s", opcode);
+	fprintf(stderr, "L%d: unknown instruction %s\n", all_key.line_number, opcode);
 	free_stack(stack);
 	free(all_key.content);
 	fclose(all_key.file);
-	exit(EXIT_FAILURE);
+	exit(1);
 }
 

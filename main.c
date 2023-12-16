@@ -16,7 +16,7 @@ int main(int arc, char **argv)
 	if (all_key.file == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
+		exit(1);
 	}
 	while ((read = getline(&all_key.content, &len, all_key.file)) != -1)
 	{
@@ -31,6 +31,7 @@ int main(int arc, char **argv)
 	}
 	fclose(all_key.file);
 	free(all_key.content);
+	free_stack(&stack);
 	return (0);
 }
 
