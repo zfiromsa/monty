@@ -64,6 +64,8 @@ void F_add(stack_t **stack, unsigned int line_number);
 void F_nop(stack_t **stack, unsigned int line_number);
 void F_sub(stack_t **stack, unsigned int line_number);
 void F_mul(stack_t **stack, unsigned int line_number);
+void F_mod(stack_t **stack, unsigned int line_number);
+void F_div(stack_t **stack, unsigned int line_number);
 int is_number(void);
 
 #endif

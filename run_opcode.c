@@ -13,6 +13,8 @@ int run_op_code(char *opcode, stack_t **stack)
 		{"nop", F_nop},
 		{"mul", F_mul},
 		{"sub", F_sub},
+		{"div", F_div},
+		{"mod", F_mod},
 		{NULL, NULL}
 	};
 
