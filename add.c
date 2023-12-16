@@ -3,9 +3,9 @@
 void F_add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
-	int i;
+	int i, _tmp1;
 
-	i = 0;
+	i = _tmp1 = 0;
 	tmp = (*stack);
 	while (tmp->next)
 	{
@@ -20,9 +20,10 @@ void F_add(stack_t **stack, unsigned int line_number)
 		fclose(all_key.file);
 		exit(EXIT_FAILURE);
 	}
-	(*stack)->n = (*stack)->n + ((*stack)->next->n);
-	(*stack)->next = (*stack)->next->next;
-	(*stack)->next->next->prev = (*stack);
-	free((*stack)->next);
+	(*stack)->n = _tmp1;
+	tmp = (*stack)->next;
+	free(*stack);
+	(*stack) = tmp;
+	(*stack)->n = _tmp1 + (*stack)->n;
 }
 
