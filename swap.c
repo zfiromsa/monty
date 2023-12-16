@@ -6,6 +6,7 @@ void F_swap(stack_t **stack, unsigned int line_number)
     int i, p_tmp;
 
     i = 0;
+    p_tmp = 0;
     tmp = (*stack);
 	while (tmp)
 	{
