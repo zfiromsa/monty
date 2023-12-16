@@ -6,7 +6,6 @@ void _exit_fail(int value)
 	if (value == 1)
 	{
     	fprintf(stderr, "L%d: usage: push integer\n", all_key.line_number);
-        free(all_key.content);
         fclose(all_key.file);
 	}
 	else if (value == 2)
