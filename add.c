@@ -21,7 +21,7 @@ void F_add(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	_tmp1 = (*stack)->n;
-	_tmp2 = (*stack)->prev->n;
+	_tmp2 = (*stack)->next->n;
 	tmp = (*stack)->next;
 	free(*stack);
 	(*stack) = tmp;
