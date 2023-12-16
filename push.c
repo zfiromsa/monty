@@ -5,7 +5,7 @@ void F_push(stack_t **stack, unsigned int line_number)
 	stack_t *N_node;
 	int value;
 
-
+	(void)line_number;
 	if (all_key.arg || !is_number())
 	{
 		free_stack(stack);
