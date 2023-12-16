@@ -61,6 +61,7 @@ void F_pint(stack_t **stack, unsigned int line_number);
 void F_pop(stack_t **stack, unsigned int line_number);
 void F_swap(stack_t **stack, unsigned int line_number);
 void F_add(stack_t **stack, unsigned int line_number);
+void F_nop(stack_t **stack, unsigned int line_number);
 int is_number(void);
 
 #endif

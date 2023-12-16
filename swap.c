@@ -21,8 +21,8 @@ void F_swap(stack_t **stack, unsigned int line_number)
 		fclose(all_key.file);
 		exit(EXIT_FAILURE);
 	}
-	(*stack)->prev->n = p_tmp;
-	(*stack)->prev->n = (*stack)->n;
+	p_tmp = (*stack)->next->n;
+	(*stack)->next->n = (*stack)->n;
 	(*stack)->n = p_tmp;
 }
 
