@@ -6,7 +6,7 @@ void F_pop(stack_t **stack, unsigned int line_number)
 
 	if (!(*stack))
 	{
-		fprintf(stderr, "L%d: can't pop empty stack\n", line_number);
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 		free_stack(stack);
 		free(all_key.content);
 		fclose(all_key.file);
