@@ -23,7 +23,7 @@ void F_mod(stack_t **stack, unsigned int line_number)
 	_tmp1 = (*stack)->n;
 	_tmp2 = (*stack)->next->n;
 	tmp = (*stack)->next;
-	if (_tmp2 == 0)
+	if (_tmp1 == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 		free_stack(stack);
