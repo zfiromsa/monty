@@ -14,7 +14,7 @@ void F_mul(stack_t **stack, unsigned int line_number)
 	}
 	if (i < 2)
 	{
-		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		free_stack(stack);
 		free(all_key.content);
 		fclose(all_key.file);
