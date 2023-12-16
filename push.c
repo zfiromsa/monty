@@ -6,7 +6,7 @@ void F_push(stack_t **stack, unsigned int line_number)
 	int value;
 
 	(void)line_number;
-	if (all_key.arg == NULL || !is_number())
+	if (all_key.arg == NULL || is_number())
 	{
 		free_stack(stack);
         _exit_fail(1);
