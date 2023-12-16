@@ -7,6 +7,9 @@ int run_op_code(char *opcode, stack_t **stack)
 		{"push", F_push},
 		{"pall", F_pall},
 		{"pint", F_pint},
+		{"pop", F_pop},
+		{"add", F_add},
+		{"swap", F_swap},
 		{NULL, NULL}
 	};
 
