@@ -4,7 +4,7 @@ void F_pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
 
-	if (*stack)
+	if (!(*stack))
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		free_stack(stack);

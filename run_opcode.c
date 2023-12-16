@@ -17,8 +17,8 @@ int run_op_code(char *opcode, stack_t **stack)
 		{
 			instruction[i].f(stack, all_key.line_number);
 			return (0);
-	}
-	i++;
+		}
+		i++;
 	}
 	fprintf(stderr, "L%d: unknown instruction %s\n", all_key.line_number, opcode);
 	free_stack(stack);
