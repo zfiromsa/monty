@@ -12,7 +12,6 @@ void F_add(stack_t **stack, unsigned int line_number)
 		i++;
 		tmp = tmp->next;
 	}
-	printf("888");
 	if (i < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
@@ -21,9 +20,8 @@ void F_add(stack_t **stack, unsigned int line_number)
 		fclose(all_key.file);
 		exit(EXIT_FAILURE);
 	}
-	printf("888");
-	tmp->n = _tmp1;
-	tmp->prev->n = _tmp2;
+	_tmp1 = tmp->n;
+	_tmp2 = tmp->prev->n;
 	tmp = (*stack)->next;
 	free(*stack);
 	(*stack) = tmp;
