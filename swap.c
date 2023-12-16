@@ -8,7 +8,7 @@ void F_swap(stack_t **stack, unsigned int line_number)
 	i = 0;
 	p_tmp = 0;
 	tmp = (*stack);
-	while (tmp->next)
+	while (tmp)
 	{
 		i++;
 		tmp = tmp->next;
