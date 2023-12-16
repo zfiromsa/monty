@@ -5,8 +5,8 @@ void _exit_fail(int value)
 	fclose(all_key.file);
 	if (value == 1)
 	{
-    	fprintf(stderr, "L%d: usage: push integer\n", all_key.line_number);
-        fclose(all_key.file);
+	    	fprintf(stderr, "L%d: usage: push integer\n", all_key.line_number);
+        	fclose(all_key.file);
 	}
 	else if (value == 2)
 	{

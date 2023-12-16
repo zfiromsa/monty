@@ -2,8 +2,9 @@
 
 int is_number(void)
 {
-    char *ptr;
+	char *ptr;
 
-    strtol(all_key.arg, &ptr, 10);
-    return (*ptr == '\0');
+	strtol(all_key.arg, &ptr, 10);
+	return (*ptr == '\0');
 }
+

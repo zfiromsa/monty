@@ -2,7 +2,7 @@
 
 void F_pall(stack_t **stack, unsigned int line_number)
 {
-stack_t *tmp;
+	stack_t *tmp;
 
 	if (*stack)
 	{
@@ -10,14 +10,14 @@ stack_t *tmp;
 		free_stack(stack);
 		free(all_key.content);
 		fclose(all_key.file);
-		_exit_fail(1);
+		exit(EXIT_FAILURE);
 	}
-    tmp = *stack;
-    (void)line_number;
-    while (tmp)
-    {
-        printf("%d\n", tmp->n);
-        tmp = tmp->next;
-    }
+	tmp = *stack;
+	(void)line_number;
+	while (tmp)
+	{
+		printf("%d\n", tmp->n);
+		tmp = tmp->next;
+	}
 }
 
