@@ -7,7 +7,7 @@ void F_add(stack_t **stack, unsigned int line_number)
 
 	i = 0;
 	tmp = (*stack);
-	while (tmp)
+	while (tmp->next)
 	{
 		i++;
 		tmp = tmp->next;
