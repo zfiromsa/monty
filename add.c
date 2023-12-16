@@ -24,6 +24,5 @@ void F_add(stack_t **stack, unsigned int line_number)
 	(*stack)->next = (*stack)->next->next;
 	(*stack)->next->next->prev = (*stack);
 	free((*stack)->next);
-	free(tmp);
 }
 
