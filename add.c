@@ -20,8 +20,10 @@ void F_add(stack_t **stack, unsigned int line_number)
 		fclose(all_key.file);
 		exit(EXIT_FAILURE);
 	}
-	tmp->prev->n = tmp->n + (tmp->prev->n);
-	tmp->prev->next = NULL;
+	(*stack)->n = (*stack)->n + ((*stack)->next->n);
+	(*stack)->next = (*stack)->next->next;
+	(*stack)->next->next->prev = (*stack);
+	free((*stack)->next);
 	free(tmp);
 }
 
